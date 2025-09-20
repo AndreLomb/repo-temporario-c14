@@ -4,13 +4,30 @@ import br.c14lab.biblioteca.exceptions.LivroNaoEncontradoException;
 import br.c14lab.biblioteca.implementacao.LivroIMPL;
 import br.c14lab.biblioteca.model.Livro;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
 
 public class TestLivroIMPL {
 
+    //Teste com Mock
+    @Test
+    public void testBuscarPorIsbnComMock() {
+
+        LivroIMPL mockLivro = Mockito.mock(LivroIMPL.class);
+
+        Livro livroMockado = new Livro("12345", "Livro Mockado", "Autor Mock", "Editora", 2024, 5, "Ficção");
+
+        when(mockLivro.buscarPorIsbn("12345")).thenReturn(livroMockado);
+
+        Livro resultado = mockLivro.buscarPorIsbn("12345");
+
+        assertEquals("Livro Mockado", resultado.getTitulo());
+    }
 
 
     @Test

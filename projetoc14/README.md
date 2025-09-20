@@ -43,14 +43,18 @@ O sistema segue uma arquitetura em **camadas**, organizada em pacotes:
   - `Usuario`
   - `Emprestimo`
 
-- **implementacao** → Implementação das regras de negócio
+- **implementacao** → Implementações das regras de negócio
   - `LivroIMPL`
   - `UsuarioIMPL`
 
-- **interfaces** → Contratos (regras) das entidades
+- **implementacao.interfaces** → Contratos das entidades
   - `LivroRegras`
   - `UsuarioRegras`
   - `EmprestimoRegras`
+
+- **service** → Camada de serviço
+  - `BibliotecaService`
+  - `BibliotecaServiceImpl`
 
 - **exceptions** → Tratamento de erros específicos
   - `EmprestimoException`
@@ -60,6 +64,8 @@ O sistema segue uma arquitetura em **camadas**, organizada em pacotes:
 - **Main.java** → Classe principal para execução do programa
 
 ---
+
+## 📂 Estrutura de Pastas
 
 ## 📂 Estrutura de Pastas
 
@@ -83,23 +89,43 @@ src/br/c14lab/biblioteca/
  │   ├── Usuario.java
  │   └── Emprestimo.java
  │
+ ├── service/
+ │   ├── BibliotecaService.java
+ │   └── BibliotecaServiceImpl.java
+ │
  └── Main.java
 ````
 ---
+## 🧪 Testes Unitários
 
+Os testes são implementados utilizando **JUnit 5** e **Mockito**, garantindo a qualidade do código.
+
+**Principais testes:**
+
+- ✅ Testes de cadastro, busca, atualização e remoção de livros
+- ✅ Testes de exceções personalizadas (`LivroNaoEncontradoException`, `UsuarioNaoEncontradoException`)
+- ✅ Testes de busca de usuários por nome e ID
+- ✅ Testes de remoção de usuários e tratamento de erros
+- ✅ Teste com mock para `buscarPorIsbn`
+
+> **Observação:** há testes que usam a implementação real (`LivroIMPL`, `UsuarioIMPL`) e ao menos um teste demonstrativo com **Mockito** para ensinar/atender ao requisito de mock.
+
+---
 ## ⚙️ Recursos  Utilizadas
 
 - ☕ **Java 17+**
-- 📦 **Coleções Java (List, HashMap, etc.)**
-- ⚡ **Exceções personalizadas** para melhor legibilidade, clareza e controle de erros.
-- 🔧 **Maven para gerenciamento de dependências e build do projeto**
+- 📦 **Maven** para gerenciamento de dependências
+- 🧪 **JUnit 5** para testes unitários
+- 🛠️ **Mockito** para criação de mocks e testes isolados
+- ⚡ **Coleções Java** (`List`, `HashMap`, etc.)
+- 🔧 **Exceções personalizadas** para maior clareza no tratamento de erros
 ---
 
 ## ✅ Status do Projeto
 
-- ✔️ Sistema de **usuários** implementado
-- ⏳ Busca de livros por autor ainda em desenvolvimento
-- ⏳ **Empréstimos** definidos via interface (aguardando implementação completa)
-- ⚠️ Exceções personalizadas já estruturadas
+- ✔️ Módulo de usuários totalmente implementado
+- ✔️ CRUD de livros completo
+- ✔️ Testes unitários abrangentes com JUnit e Mockito
+- ⏳ Funcionalidades de empréstimo em desenvolvimento
 
 ---

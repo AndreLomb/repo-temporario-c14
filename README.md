@@ -23,7 +23,7 @@ O sistema possibilita **cadastrar, consultar, atualizar e remover registros**, a
 - ✏️ Atualizar dados de usuários
 - 🗑️ Remover usuários
 
-### *📦 Empréstimos (EM DESENVOLVIMENTO)*
+### *📦 Empréstimos*
 - ➕ Registrar novo empréstimo
 - 🔍 Consultar empréstimo por **ID**
 - 📑 Listar todos os empréstimos
@@ -98,8 +98,8 @@ src/br/c14lab/biblioteca/
 ## ✅ Status do Projeto
 
 - ✔️ Sistema de **usuários** implementado
-- ⏳ Busca de livros por autor ainda em desenvolvimento
-- ⏳ **Empréstimos** definidos via interface (aguardando implementação completa)
-- ⚠️ Exceções personalizadas já estruturadas
+- ✔️ Busca de livros por autor ainda em desenvolvimento
+- ✔️ **Empréstimos** definidos via interface (aguardando implementação completa)
+- ✔️ Exceções personalizadas já estruturadas
 
 ---
